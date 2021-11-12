@@ -1,16 +1,16 @@
 module.exports = {
   mode: 'jit', // ⚠ Make sure to have this
-  purge: ["./src/**/*.svelte"],
+  purge: ['./src/**/*.svelte'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ['IBM Plex Sans', 'sans-serif'],
-      serif: ['IBM Plex Serif', 'serif'],
+      serif: ['IBM Plex Serif', 'serif']
     },
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-}
+  plugins: []
+};
