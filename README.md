@@ -36,3 +36,11 @@ yarn build
 ```
 
 > You can preview the built app with `yarn preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+
+## Running on local Docker
+
+Just running the app with `yarn preview:docker` on your local Docker
+
+```bash
+sh build-run-alpine.local.sh
+```

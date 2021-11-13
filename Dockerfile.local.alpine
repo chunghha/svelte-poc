@@ -1,0 +1,30 @@
+ARG NODE_VERSION=14
+
+# Builder Container
+FROM node:${NODE_VERSION}-alpine as builder
+
+RUN mkdir /app
+WORKDIR /app
+
+# Set user and install packages
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install --frozen-lockfile
+
+# Copy files to build
+COPY . .
+
+# Build the API
+RUN yarn build
+
+# Runner Container
+FROM node:${NODE_VERSION}-alpine as runner
+
+# Copy files from builder
+WORKDIR /app
+COPY --from=builder /app .
+
+# Expose the PORT
+ENV PORT=3000
+EXPOSE 3000
+CMD ["yarn", "preview:docker"]
