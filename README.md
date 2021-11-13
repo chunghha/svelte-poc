@@ -27,6 +27,17 @@ yarn dev
 yarn dev -- --open
 ```
 
+## Formatting
+
+Instead of prettier, use dprint so [install it](https://dprint.dev/install/)
+
+```bash
+yarn fmt
+
+# or to format and check with eslint
+yarn check:all
+```
+
 ## Building
 
 Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:

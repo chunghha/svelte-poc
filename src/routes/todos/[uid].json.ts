@@ -1,6 +1,6 @@
-import { api } from './_api';
-import type { RequestHandler } from '@sveltejs/kit';
 import type { Locals } from '$lib/types';
+import type { RequestHandler } from '@sveltejs/kit';
+import { api } from './_api';
 
 // PATCH /todos/:uid.json
 export const patch: RequestHandler<Locals, FormData> = async request => {

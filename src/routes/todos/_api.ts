@@ -1,5 +1,5 @@
-import type { EndpointOutput, Request } from '@sveltejs/kit';
 import type { Locals } from '$lib/types';
+import type { EndpointOutput, Request } from '@sveltejs/kit';
 
 /*
 	This module is used by the /todos.json and /todos/[uid].json
