@@ -14,14 +14,14 @@
 <article>
   <span>{i + offset + 1}</span>
   <h2><a target="_blank" href={url} class="item">{item.title}</a></h2>
-  <p class="meta"><a href="#/item/{item.id}" class="comment">{comment_text()}</a> by {item.user} {item.time_ago}</p>
+  <p class="time"><a href="#/item/{item.id}" class="comment">{comment_text()}</a> by {item.user} {item.time_ago}</p>
 </article>
 
 <style>
   article {
     position: relative;
     padding: 0 0 0 2em;
-    border-bottom: 1px solid #d08770;
+    border-bottom: 1px solid var(--cds-interactive-01);
   }
 
   h2 {
@@ -35,13 +35,18 @@
   }
 
   .item {
-    color: #3b4252;
+    color: var(--cds-link-02);
     font-size: large;
     font-weight: 700;
   }
 
   .comment {
-    color: #5e81ac;
+    color: var(--cds-text-02);
     font-weight: 700;
+  }
+
+  .time {
+    color: var(--cds-interactive-04);
+    font-weight: 500;
   }
 </style>

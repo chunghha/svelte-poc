@@ -5,7 +5,7 @@
 <article>
   <p class="meta">{comment.user} {comment.time_ago}</p>
 
-  {@html comment.content}
+  <p class="content">{comment.content}</p>
 
   <div class="replies">
     {#each comment.comments as child}
@@ -16,14 +16,19 @@
 
 <style>
   article {
-    border-top: 1px solid #d08770;
+    border-top: 1px solid salmon;
     margin: 1em 0 0 0;
     padding: 1em 0 0 0;
     font-size: 1rem;
   }
 
+  .content {
+    color: var(--cds-text-01);
+  }
+
   .meta {
-    color: #bf616a;
+    color: var(--cds-text-02);
+    font-weight: 700;
   }
 
   .replies {

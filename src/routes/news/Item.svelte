@@ -11,13 +11,13 @@
 
 <article>
   <a href={url}>
-    <h1 class="text-purple-300">{item.title}</h1>
+    <h1>{item.title}</h1>
     {#if item.domain}
-      <small>{item.domain}</small>
+      <small class="small">{item.domain}</small>
     {/if}
   </a>
 
-  <p class="meta">submitted by {item.user} {item.time_ago}</p>
+  <p class="item">submitted by {item.user} {item.time_ago}</p>
 </article>
 
 <div class="comments">
@@ -32,12 +32,23 @@
   }
 
   a {
+    color: var(--cds-support-03);
+    font-weight: 700;
     display: block;
     margin: 0 0 1em 0;
   }
 
   h1 {
+    color: var(--cds-text-01);
     font-size: 1.4em;
     margin: 0;
+  }
+
+  small {
+    color: var(--cds-text-02);
+  }
+
+  .item {
+    color: var(--cds-interactive-04);
   }
 </style>

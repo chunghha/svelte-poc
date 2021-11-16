@@ -1,8 +1,3 @@
 {
-  "recommendations": [
-    "svelte.svelte-vscode",
-    "bradlc.vscode-tailwindcss",
-    "dprint.dprint",
-    "aaron-bond.better-comments"
-  ]
+  "recommendations": ["svelte.svelte-vscode", "dprint.dprint", "aaron-bond.better-comments"]
 }

@@ -1,10 +1,13 @@
 <script lang="ts">
+  import { Content, Grid, RadioButton, RadioButtonGroup, Row, Theme } from 'carbon-components-svelte';
+  import ColorSwitch16 from 'carbon-icons-svelte/lib/ColorSwitch16';
   import { onMount } from 'svelte';
   import Item from './Item.svelte';
   import List from './List.svelte';
 
   let item;
   let page;
+  let theme;
 
   async function hashchange() {
     // the poor man's router!
@@ -28,12 +31,27 @@
 
 <svelte:window on:hashchange={hashchange} />
 
+<Theme bind:theme />
+
 <main>
-  {#if item}
-    <Item {item} returnTo="#/top/{page}" />
-  {:else if page}
-    <List {page} />
-  {/if}
+  <Content style="padding: 1rem">
+    <Grid fullWidth>
+      <Row>
+        <div style="padding: 0 0.8rem 0 1.5rem;"><ColorSwitch16 /></div>
+        <RadioButtonGroup legendText="Carbon theme" bind:selected={theme}>
+          {#each ['white', 'g10', 'g80', 'g90', 'g100'] as value}
+            <RadioButton labelText={value} {value} />
+          {/each}
+        </RadioButtonGroup>
+      </Row>
+      <hr />
+      {#if item}
+        <Item {item} returnTo="#/top/{page}" />
+      {:else if page}
+        <List {page} />
+      {/if}
+    </Grid>
+  </Content>
 </main>
 
 <style>
@@ -46,13 +64,8 @@
   }
 
   main :global(.meta) {
-    color: #2e3440;
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0 0 1em 0;
-  }
-
-  main :global(a) {
-    color: #2a4365;
   }
 </style>

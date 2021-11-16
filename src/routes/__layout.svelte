@@ -1,7 +1,7 @@
 <script lang="ts">
   import Header from '$lib/header/Header.svelte';
+  import 'carbon-components-svelte/css/all.css';
   import '../app.css';
-  import '../styles/tailwind-output.css';
 </script>
 
 <Header />
@@ -36,11 +36,5 @@
 
   footer a {
     font-weight: bold;
-  }
-
-  @media (min-width: 480px) {
-    footer {
-      padding: 40px 0;
-    }
   }
 </style>
